@@ -48,11 +48,13 @@ print_info(name="张三", age=23)
 
 '''
 
-
 #安全取值：kwargs.get(key, 默认值)（极高频）
 #如果你直接用中括号 kwargs["gender"] 取一个不存在的键，程序会直接崩溃报错（KeyError）。
 #用 .get() 可以安全读取，如果找不到就返回默认值（不写默认值就返回 None）：
 # 如果用户传了 'country'，就用用户传的；如果没传，默认就是 '未知国家'
+'''
+
+
 def print_info(**kwargs):
     print("收到的原始参数：", kwargs)
     
@@ -84,3 +86,13 @@ print_info(name="李四", age=22, country="加拿大")
 
 #多返回值
 #Python 的函数可以返回多个值，本质上是返回一个元组，然后用拆包的方式接收.多返回值在刷算法题时很实用，比如一个函数既要返回最大值，又要返回最大值的下标，用多返回值就很方便
+'''
+
+
+
+def add(a,b):
+    return a + b
+
+add = lambda a, b: a + b 
+
+print(add(1, 2)) 
