@@ -87,12 +87,23 @@ print_info(name="李四", age=22, country="加拿大")
 #多返回值
 #Python 的函数可以返回多个值，本质上是返回一个元组，然后用拆包的方式接收.多返回值在刷算法题时很实用，比如一个函数既要返回最大值，又要返回最大值的下标，用多返回值就很方便
 '''
+def get_max_and_index(numbers):
+    return a,b
 
 
 
-def add(a,b):
+
+
+
+
+
+
+'''
+def add_func(a,b):
     return a + b
 
-add = lambda a, b: a + b 
+lam_func = lambda a, b: a * b 
 
-print(add(1, 2)) 
+print("C is ",add_func(1, 2)) 
+print("C is ",lam_func(1, 2))
+'''
