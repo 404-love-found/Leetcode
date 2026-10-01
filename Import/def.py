@@ -14,7 +14,7 @@
 
 
 
-#可变参数 *args 
+#                                                     可变参数 *args 
 '''
 def my_sum(*args):
     print(args)  # 打印传入的参数，args 是一个元组
@@ -28,7 +28,7 @@ print(my_sum(1, 2, 3))  # 输出: 6
 '''
 
 
-#可变参数 **kwargs
+#                                                   可变参数 **kwargs
 # **kwargs 把多余的关键字参数打包成字典
 '''
 def print_info(**kwargs):
@@ -49,10 +49,12 @@ print_info(name="张三", age=23)
 '''
 
 
-#安全取值：kwargs.get(key, 默认值)（极高频）
-#如果你直接用中括号 kwargs["gender"] 取一个不存在的键，程序会直接崩溃报错（KeyError）。
-#用 .get() 可以安全读取，如果找不到就返回默认值（不写默认值就返回 None）：
-# 如果用户传了 'country'，就用用户传的；如果没传，默认就是 '未知国家'
+#   安全取值：kwargs.get(key, 默认值)（极高频）
+#   如果你直接用中括号 kwargs["gender"] 取一个不存在的键，程序会直接崩溃报错（KeyError）。
+#   用 .get() 可以安全读取，如果找不到就返回默认值（不写默认值就返回 None）：
+#   如果用户传了 'country'，就用用户传的；如果没传，默认就是 '未知国家'
+
+'''
 def print_info(**kwargs):
     print("收到的原始参数：", kwargs)
     
@@ -81,6 +83,68 @@ print("【第 2 次调用】")
 print_info(name="李四", age=22, country="加拿大")
 
 #*args 和 **kwargs 只是约定俗成的名字，你也可以叫 *numbers 或 **options，关键是前面的 * 和 **
+'''
 
-#多返回值
+
+#                                                                       多返回值
+'''
 #Python 的函数可以返回多个值，本质上是返回一个元组，然后用拆包的方式接收.多返回值在刷算法题时很实用，比如一个函数既要返回最大值，又要返回最大值的下标，用多返回值就很方便
+
+# 返回商和余数
+def divide(a, b):
+    return a // b, a % b
+
+# 用两个变量接收两个返回值（元组拆包）
+q, r = divide(10, 3)
+# 输出：商 = 3, 余数 = 1
+print(f"商 = {q}, 余数 = {r}")
+
+# 其实返回的是一个元组
+result = divide(10, 3)
+# 输出：(3, 1)
+print(result)
+
+'''
+
+#                                                                  lambda 表达式
+#                                                lambda 是一种创建匿名函数的简洁写法，适合写那些只用一次的简单函数
+'''
+# 一组学生，每个人是 (姓名, 成绩) 的元组
+students = [("Alice", 88), ("Bob", 95), ("Charlie", 72), ("Diana", 91)]
+
+# 按成绩从高到低排序
+# key 参数告诉 sorted 用什么规则排序
+# lambda x: x[1] 表示取每个元组的第二个元素（成绩）
+ranked = sorted(students, key=lambda x: x[1], reverse=True)
+# 输出：[('Bob', 95), ('Diana', 91), ('Alice', 88), ('Charlie', 72)]
+print(ranked)
+
+# 按姓名长度排序
+by_name_len = sorted(students, key=lambda x: len(x[0]))
+# 输出：[('Bob', 95), ('Alice', 88), ('Diana', 91), ('Charlie', 72)]
+print(by_name_len)
+
+# 对普通列表也行：按绝对值排序
+nums = [-3, 1, -4, 1, 5, -9, 2, -6]
+sorted_nums = sorted(nums, key=lambda x: abs(x))
+# 输出：[1, 1, 2, -3, -4, 5, -6, -9]
+print(sorted_nums)
+#刷算法题时 sorted + lambda 的组合用得非常频繁，一定要熟练掌握。
+'''
+
+
+#                     列表推导式（List Comprehension）: Python 中非常有特色的语法，能用一行代码生成一个列表。
+
+
+#(1)生成 0~9 每个数的平方
+'''
+squares = [x**2 for x in range(10)]
+print(squares)  
+'''
+
+
+#(2)生成字符串列表
+
+names = ["alice", "bob", "charlie"]
+upper_names = [name.upper() for name in names] #upper() 方法将字符串转换为大写字母
+print(upper_names)
