@@ -90,6 +90,9 @@ print_info(name="李四", age=22, country="加拿大")
 '''
 #Python 的函数可以返回多个值，本质上是返回一个元组，然后用拆包的方式接收.多返回值在刷算法题时很实用，比如一个函数既要返回最大值，又要返回最大值的下标，用多返回值就很方便
 
+def get_max_and_index(numbers):
+    return a,b
+
 # 返回商和余数
 def divide(a, b):
     return a // b, a % b
@@ -109,6 +112,14 @@ print(result)
 #                                                                  lambda 表达式
 #                                                lambda 是一种创建匿名函数的简洁写法，适合写那些只用一次的简单函数
 '''
+def add_func(a,b):
+    return a + b
+
+lam_func = lambda a, b: a * b
+
+print("C is ",add_func(1, 2))
+print("C is ",lam_func(1, 2))
+
 # 一组学生，每个人是 (姓名, 成绩) 的元组
 students = [("Alice", 88), ("Bob", 95), ("Charlie", 72), ("Diana", 91)]
 
