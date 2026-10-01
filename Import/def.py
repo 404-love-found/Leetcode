@@ -1,3 +1,6 @@
+from faker import Faker
+import random
+
 #Python 用 def 关键字定义函数
 #注意 Python 不需要声明参数类型和返回值类型——因为 Python 是动态类型语言，变量的类型在运行时自动确定。你传什么进去，它就是什么类型。
 #还有一点，Python 是用缩进来划分代码块的。def 下面缩进的部分就是函数体，缩进结束函数就结束了。一般用 4 个空格缩进
@@ -153,9 +156,46 @@ squares = [x**2 for x in range(10)]
 print(squares)  
 '''
 
+# 生成字符串列表
+'''
+fake = Faker()
+# 1. 生成包含 (姓名) 的列表
+students = [fake.first_name() for _ in range(random.randint(1,100))]
 
-#(2)生成字符串列表
-
-names = ["alice", "bob", "charlie"]
-upper_names = [name.upper() for name in names] #upper() 方法将字符串转换为大写字母
+# 2. 一步到位：提取名字并直接转换成大写
+upper_names = [student.upper() for student in students]
 print(upper_names)
+'''
+
+
+
+#                                               嵌套推导式
+#                                       列表推导式可以嵌套，最常见的用途是创建二维列表
+
+# 创建 3 行 4 列的二维列表，初始值都是 0
+# 外层循环 3 次（行），内层循环 4 次（列）
+'''
+matrix = [[0 for j in range(4)] for i in range(3)]
+
+for row in matrix:
+    print(row)
+
+'''
+#这里要特别注意一个坑：创建二维列表不能用 [[0]*4]*3 这种写法。
+#因为 *3 复制的是引用，三行指向的是同一个列表对象，修改一行其他行也会变。
+#用列表推导式 [[0 for j in range(4)] for i in range(3)] 才是正确的做法，每行都是独立的列表。
+#这个坑在刷算法题时非常容易踩，一定要记住。
+
+
+#字典推导式 / 集合推导式
+#既然列表有推导式，字典和集合自然也有。语法几乎一样，只是把 [] 换成 {}
+#:是 Python 字典中用来分隔“键 (Key)”和“值 (Value)”的专属符号。
+
+# 集合推导式：{表达式 for 变量 in 可迭代对象}
+# 注意集合会自动去重
+''''
+nums = [1, 2, 2, 3, 3, 3, 4, 4, 4, 4]
+unique_squares = {x ** 2 for x in nums}
+# 输出：{16, 1, 4, 9}（集合无序）
+print(unique_squares)
+'''
