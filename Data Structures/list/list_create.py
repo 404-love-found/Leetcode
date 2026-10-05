@@ -51,5 +51,8 @@ del nums[1]
 print(nums)
 
 
-
+'''
+append 和 pop 是刷题时用得最多的两个操作，它们操作的都是列表末尾，时间复杂度 O(1)。
+而 pop(i)、insert(i, x)、del 操作的是中间位置，需要移动元素，时间复杂度 O(n)
+'''
 
