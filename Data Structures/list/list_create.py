@@ -35,3 +35,21 @@ print(grid)
 用列表推导式 [[0]*cols for _ in range(rows)] 才是正确做法，每行都是独立的列表对象。
 这个坑在刷算法题时非常容易踩，一定要记住。
 '''
+
+
+last = nums.pop(2)#删除并提取索引位置为 2 的元素
+print("After popping index 2:", nums) 
+print("Popped element:", last)
+
+
+# insert(i, x)：在索引 i 处插入元素 x
+new = nums.insert(2, 99)
+print("After inserting 99 at index 2:", nums)
+
+# del：删除指定索引的元素
+del nums[1]
+print(nums)
+
+
+
+
