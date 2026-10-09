@@ -122,7 +122,7 @@ lam_func = lambda a, b: a * b
 
 print("C is ",add_func(1, 2))
 print("C is ",lam_func(1, 2))
-
+'''
 # 一组学生，每个人是 (姓名, 成绩) 的元组
 students = [("Alice", 88), ("Bob", 95), ("Charlie", 72), ("Diana", 91)]
 
@@ -144,7 +144,7 @@ sorted_nums = sorted(nums, key=lambda x: abs(x))
 # 输出：[1, 1, 2, -3, -4, 5, -6, -9]
 print(sorted_nums)
 #刷算法题时 sorted + lambda 的组合用得非常频繁，一定要熟练掌握。
-'''
+
 
 
 #                     列表推导式（List Comprehension）: Python 中非常有特色的语法，能用一行代码生成一个列表。
