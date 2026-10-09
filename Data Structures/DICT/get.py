@@ -17,3 +17,12 @@ for ch in text:
 print(freq)
 
 print("最大频率的字符及其频率：",max(freq.items(), key=lambda x: x[1]))  # 输出频率最高的字符及其频率
+
+
+
+#复杂度为O(n)的写法，但是不用循环
+#Counter 完全不需要提前判断 key 是否存在
+from collections import Counter
+freq = Counter(text)
+print(freq)
+
