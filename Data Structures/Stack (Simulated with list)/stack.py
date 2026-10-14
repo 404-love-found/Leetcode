@@ -44,8 +44,9 @@ def is_valid(s):
                        stack.pop()
         return len(stack) == 0
 
+input_str =input("请输入括号字符串：")
+print("括号匹配结果：", is_valid(input_str))
 
-                
+          
 
 
-        
