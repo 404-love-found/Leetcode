@@ -5,6 +5,8 @@ Python 没有专门的栈类型，直接用列表就能模拟
 
 from inspect import stack
 
+
+'''
 stack = []
 
 # 入栈
@@ -27,3 +29,23 @@ stack.pop()
 print("全部出栈后：", len(stack)==0)
 #判空：len(stack) == 0
 
+'''
+                #经典例子——括号匹配：
+def is_valid(s):
+        stack = []
+        pairs = {")": "(", "}": "{", "]": "["}
+        for ch in s:
+                if ch in '({[':
+                       stack.append(ch)
+                else:
+                       if not stack or stack[-1] != pairs[ch]: 
+                #stack[-1] 是 Python 列表的负索引语法，-1 表示最后一个元素
+                               return False
+                       stack.pop()
+        return len(stack) == 0
+
+
+                
+
+
+        
