@@ -29,4 +29,31 @@ print("入队后：", queue)
 
 
 #BFS 层序遍历
+# 用邻接表表示一个图
+# 0 -> 1, 2
+# 1 -> 3
+# 2 -> 3, 4
+graph = {
+    0: [1, 2],
+    1: [3],
+    2: [3, 4],
+    3: [],
+    4: [],
+}
 
+deque = deque()
+visited = set()
+#定义集合和队列
+
+deque.append(0)#从 0 开始
+visited.add(0)#从 0 开始访问
+
+stack = []
+
+while deque:
+    node = deque.popleft()
+    stack.append(node)
+    for neighbor in graph[node]:
+        if neighbor not in visited:
+            visited.add(neighbor)
+            deque.append(neighbor)
