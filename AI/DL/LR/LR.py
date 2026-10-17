@@ -1,5 +1,5 @@
 '''
-线性回归训练,机器学习Linear Regression Training, Machine Learning
+线性回归训练/Linear Regression Training
 '''
 
 import numpy as np
