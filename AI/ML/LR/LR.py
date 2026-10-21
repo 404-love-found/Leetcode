@@ -9,7 +9,7 @@ import matplotlib_inline
 
 #载入数据
 # 1. 自动获取 LR.py 所在目录 (AI/DL/) 下的 mpg.csv 路径
-url = 'AI/DL/mpg.csv'
+url = 'AI/ML/mpg.csv'
 data = pd.read_csv(url)
 #检测数据
 print('随机查看5条数据:', data.sample(5))

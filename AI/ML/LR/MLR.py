@@ -11,7 +11,7 @@ import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
 
-df = pd.read_csv("AI/DL/mpg.csv")
+df = pd.read_csv("AI/ML/mpg.csv")
 
 # verify successful load with some randomly selected records
 df.sample(5)
