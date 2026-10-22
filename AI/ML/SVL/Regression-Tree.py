@@ -22,7 +22,7 @@ print("missing values:\n",raw_data.isnull().sum())
 
 #=====2.Correlation========
 correlation_values = raw_data.corr(numeric_only=True)['tip_amount'].drop('tip_amount')
-correlation_values = correlation_values.sort_values()
+correlation_values = correlation_values.sort_values(ascending=False)
 print(correlation_values) 
 
 #======3.plot the correlation===
