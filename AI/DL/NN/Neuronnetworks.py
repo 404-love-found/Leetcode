@@ -38,5 +38,3 @@ def forward_propagation(network, inputs):
     for layer in network:
         layer_output = []
         for node_data in network[layer].values():
-            
-
