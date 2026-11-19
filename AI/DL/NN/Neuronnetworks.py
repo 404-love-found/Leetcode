@@ -33,8 +33,22 @@ def node_activation(weighted_sum):
     return 1.0 / (1.0 + np.exp(-weighted_sum))
 
 #perform forward propagation through the network
-def forward_propagation(network, inputs):
+def forward_propagate(network, inputs):
     layer_inputs = list(inputs)
     for layer in network:
-        layer_output = []
+        layer_outputs = []
         for node_data in network[layer].values():
+            z = compute_weighted_sum(layer_inputs, node_data['weights'], node_data['bias'])
+            a = node_activation(z)
+            layer_outputs.append(np.around(a[0], decimals=4))
+        layer_inputs = layer_outputs
+    return layer_outputs
+
+
+np.random.seed(12)
+inputs = np.around(np.random.uniform(size=5), decimals=2)
+
+small_network = initialize_network(5, 3, [3, 2, 3], 1)
+
+predictions = forward_propagate(small_network, inputs)
+print("最终预测结果:", predictions)
