@@ -17,20 +17,11 @@ print()
 '''
 
 # range(start, end, step) 带步长
-# 输出：0 2 4 6 8
-'''
 for i in range(0, 10, 2):
     print(i, end=" ")
 print()
-'''
 
-# 倒序遍历
-# 输出：5 4 3 2 1
-'''
-for i in range(5, 0, -1):
-    print(i, end=" ")
-print()
-'''
+
 
 
 
