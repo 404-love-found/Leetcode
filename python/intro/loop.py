@@ -1,12 +1,12 @@
 # range(n) 生成 0 到 n-1 的整数序列
 # 输出：0 1 2 3 4
-'''
+
 input_str = input("请输入一个整数：")
 n = int(input_str)
 for i in range(n):
     print(i, end=' ')
 
-'''
+
 
 
 # range(start, end) 生成 start 到 end-1
@@ -33,21 +33,5 @@ for i in range(5, 0, -1):
 print()
 '''
 
-#遍历列表和 enumerate
-# 直接遍历列表
-fruits = ["苹果", "香蕉", "橘子"]
-for x in fruits:
-    print(x)
 
-print("---")
 
-# enumerate 同时返回下标和元素
-for i, x in enumerate(fruits):
-    print(f"第{i}个：{x}")
-
-print("---")
-
-# 遍历字符串（逐个字符）
-for ch in "Hello":
-    print(ch, end=" ")
-print()
