@@ -1,5 +1,4 @@
 # range(n) 生成 0 到 n-1 的整数序列
-# 输出：0 1 2 3 4
 
 input_str = input("请输入一个整数：")
 n = int(input_str)
